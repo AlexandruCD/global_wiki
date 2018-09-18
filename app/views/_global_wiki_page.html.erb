@@ -1,0 +1,13 @@
+<% if(custom_wiki? && is_user_allowed?)  %>
+
+ <script type="text/javascript">
+    $(document).ready(function($) {
+       var wiki_container = $(".splitcontentleft > .wiki")[0].remove();
+     });
+  </script>
+
+<div class="wiki">
+    <%= textilizable(project_wiki_content, {project: global_project}) %>
+</div>
+
+<% end %>

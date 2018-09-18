@@ -1,0 +1,11 @@
+<p>
+
+  <%=content_tag(:label, "Select the global wiki project:") %>
+  <% projects  = [["Select", "default"]]
+     projects.concat(Project.all.map { |x| [ x.name, x.id ]})  %>
+     <%=select_tag("settings[project]",
+                options_for_select(projects,
+                                   :selected => settings["project"]), :class => 'selectize') %><br/>
+
+</p>
+
