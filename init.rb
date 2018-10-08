@@ -2,10 +2,6 @@ require 'redmine'
 
 require_dependency 'global_wiki/hooks'
 
-Rails.configuration.to_prepare do
-  ApplicationHelper.send(:include, ::GlobalWikiHelper)
-end
-
 Redmine::Plugin.register :global_wiki do
   name 'Global Wiki plugin'
   author 'Alexandru Creangă'
@@ -15,4 +11,8 @@ Redmine::Plugin.register :global_wiki do
   author_url 'https://assist-software.net/team/alexandru-creanga'
 
   settings :default => {'project' => 'default'}, :partial => 'settings/wiki_settings'
+
+  Rails.configuration.to_prepare do
+    ApplicationHelper.send(:include, ::GlobalWikiHelper)
+  end
 end
