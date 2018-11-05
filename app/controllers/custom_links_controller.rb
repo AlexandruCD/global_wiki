@@ -59,7 +59,7 @@ class CustomLinksController < ApplicationController
   end
 
   def first_or_after(position)
-    return {:first => true} if position == "First in list"
+    return {:first => true} if position == "first in list"
     {:after => position.to_sym}
   end
 end
