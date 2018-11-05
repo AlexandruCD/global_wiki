@@ -1,0 +1,7 @@
+<%= render :partial => 'custom_links/header' %>
+<h2><%=l('custom_menu_link.edit_title')%></h2>
+
+<%= form_for @custom_link do |f| %>
+  <%= render :partial => 'custom_links/form', :locals => { :f => f, :exclude_self => @custom_link.name } %>
+  <%= submit_tag l('custom_menu_link.edit'), :name => "edit" %>
+<% end %>

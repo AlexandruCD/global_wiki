@@ -1,0 +1,17 @@
+<p>
+  <%= f.text_field :name, :required => true, :size => 30 %>
+</p>
+<p>
+  <%= f.text_field :url, :required => true, :size => 30 %>
+</p>
+<p>
+  <%= f.collection_select(:after_which,
+                          Redmine::MenuManager.map(:top_menu)
+                                              .menu_items
+                                              .children
+                                              .map {|item| [item.name, item.caption]}
+                                              .reject {|item| item.last == exclude_self if local_assigns[:exclude_self]}
+                                              .unshift([":first", "First in list"]),
+                          :first,
+                          :last) %>
+</p>

@@ -1,0 +1,8 @@
+
+<%= render :partial => 'custom_links/header' %>
+<h2><%=l('custom_menu_link.add_title')%></h2>
+
+<%= form_for @custom_link do |f| %>
+  <%= render :partial => 'custom_links/form', :locals => { :f => f } %>
+  <%= submit_tag l('custom_menu_link.add'), :name => "add" %>
+<% end %>

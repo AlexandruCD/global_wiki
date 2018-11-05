@@ -1,0 +1,16 @@
+en:
+  name: Name
+  url: URL
+  after_which: After which link to be inserted
+  custom_menu_link:
+    edit: Edit
+    edit_title: Edit the custom link
+    successful_update: Custom link has been successfully updated
+    delete: Delete
+    confirm: Do you really want to delete that link?
+    successful_delete: Custom link has been deleted
+    successful_create: Custom link has been added
+    add: Add
+    add_title: Adding new custom link
+    add_custom_link: Add a new custom link
+  custom_links: Configure custom links

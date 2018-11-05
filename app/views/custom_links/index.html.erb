@@ -1,0 +1,21 @@
+<%= render :partial => 'custom_links/header' %>
+<h2><%= l('custom_links') %></h2>
+<table id="custom_menu_links" class="list">
+<thead>
+    <tr>
+        <th><%= l('name') %></th>
+        <th><%= l('url') %></th>
+        <th><%= l('after_which') %></th>
+        <th></th>
+    </tr>
+</thead>
+<tbody>
+<% @custom_links.each do |custom_link| %>
+  <tr class="<%= cycle('odd', 'even') %>">
+    <td class="name"><%= custom_link.name %></td>
+    <td class="url"><%= custom_link.url %></td>
+    <td class="buttons"><%= link_to l('custom_menu_link.edit'), { :controller => 'custom_links', :action => 'edit', :id => custom_link.id }, :class => 'icon icon-edit' %><%= link_to l('custom_menu_link.delete'), { :controller => 'custom_links', :action => 'destroy', :id => custom_link.id }, :confirm => l('custom_menu_link.confirm'), :method => :delete, :class => 'icon icon-del' %></td>
+  </tr>
+<% end %>
+<tbody>
+</table>
