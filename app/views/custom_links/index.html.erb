@@ -14,7 +14,8 @@
   <tr class="<%= cycle('odd', 'even') %>">
     <td class="name"><%= custom_link.name %></td>
     <td class="url"><%= custom_link.url %></td>
-    <td class="buttons"><%= link_to l('custom_menu_link.edit'), { :controller => 'custom_links', :action => 'edit', :id => custom_link.id }, :class => 'icon icon-edit' %><%= link_to l('custom_menu_link.delete'), { :controller => 'custom_links', :action => 'destroy', :id => custom_link.id }, :confirm => l('custom_menu_link.confirm'), :method => :delete, :class => 'icon icon-del' %></td>
+    <td class="after_which"><%= custom_link.after_which.humanize %></td>
+    <td class="buttons"><%= link_to l('custom_menu_link.edit'), { :controller => 'custom_links', :action => 'edit', :id => custom_link.id }, :class => 'icon icon-edit' %><%= link_to l('custom_menu_link.delete'), { :controller => 'custom_links', :action => 'destroy', :id => custom_link.id }, data: {:confirm => l('custom_menu_link.confirm')}, :method => :delete, :class => 'icon icon-del' %></td>
   </tr>
 <% end %>
 <tbody>

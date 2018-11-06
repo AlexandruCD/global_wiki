@@ -1,17 +1,26 @@
-<p>
+<div class="link-form">
+<div class="link-block">
+  <label>Name(as it will appear in the menu): </label>
   <%= f.text_field :name, :required => true, :size => 30 %>
-</p>
-<p>
+</div>
+<div class="link-block">
+  <label>Url(must start with <strong>http://</strong> or <strong>https://</strong>): </label>
   <%= f.text_field :url, :required => true, :size => 30 %>
-</p>
-<p>
+</div>
+<div class="link-block">
+  <label>Choose after which already exsitent link to display it: </label>
   <%= f.collection_select(:after_which,
                           Redmine::MenuManager.map(:top_menu)
                                               .menu_items
                                               .children
                                               .map {|item| [item.name, item.caption]}
                                               .reject {|item| item.last == exclude_self if local_assigns[:exclude_self]}
-                                              .unshift([":first", "First in list"]),
+                                              .unshift(["first in list", "First in list"]),
                           :first,
                           :last) %>
-</p>
+</div>
+
+<% content_for :header_tags do %>
+  <%= stylesheet_link_tag 'global-wiki', :plugin => 'global_wiki'%>
+<% end %>
+</div>

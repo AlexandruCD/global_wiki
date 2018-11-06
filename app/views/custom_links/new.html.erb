@@ -4,5 +4,5 @@
 
 <%= form_for @custom_link do |f| %>
   <%= render :partial => 'custom_links/form', :locals => { :f => f } %>
-  <%= submit_tag l('custom_menu_link.add'), :name => "add" %>
+  <div class="link-submit"><%= submit_tag l('custom_menu_link.add'), :name => "add" %></div>
 <% end %>

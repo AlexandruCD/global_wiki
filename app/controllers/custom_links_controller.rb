@@ -27,7 +27,6 @@ class CustomLinksController < ApplicationController
     @custom_link = CustomLink.find(params[:id])
     delete_custom_link(@custom_link)
     add_custom_link(custom_link_params)
-    puts params[:custom_link]
     if @custom_link.update_attributes custom_link_params
       flash[:notice] = l('custom_menu_link.successful_update')
       redirect_to :action => 'index'
